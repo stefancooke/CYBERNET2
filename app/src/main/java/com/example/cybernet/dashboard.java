@@ -118,7 +118,7 @@ public class dashboard extends AppCompatActivity implements View.OnClickListener
 
                     if(user.isEmailVerified()){
                         //Redirect to users homepage
-                        startActivity(new Intent(dashboard.this, ProfileActivity.class));
+                        startActivity(new Intent(dashboard.this, Homescreen.class));
                         finish();
                     }else {
                         user.sendEmailVerification();

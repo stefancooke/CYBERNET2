@@ -47,6 +47,8 @@ public class ProfileActivity extends AppCompatActivity {
         userID = user.getUid();
 
         final TextView fullNameTextView = (TextView) findViewById(R.id.fullName);
+        final TextView emailTextView = (TextView) findViewById(R.id.email);
+        final TextView ageTextView = (TextView) findViewById(R.id.age);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -59,6 +61,8 @@ public class ProfileActivity extends AppCompatActivity {
                     String age = userProfile.age;
 
                     fullNameTextView.setText(fullName);
+                    emailTextView.setText(email);
+                    ageTextView.setText(age);
                 }
             }
 

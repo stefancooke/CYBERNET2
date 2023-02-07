@@ -10,6 +10,7 @@
     <color name="green">#00FF7F</color>
     <color name="blue">#00BFFF</color>
     <color name = "dark_blue">#095CDA</color>
+    <color name ="orange">#FF9800</color>
 
 
 </resources>

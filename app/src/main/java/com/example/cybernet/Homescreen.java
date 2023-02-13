@@ -12,11 +12,11 @@ import android.widget.Toast;
 public class Homescreen extends AppCompatActivity {
 
 
-    CardView cardHome;
+    CardView cardGlossary;
     CardView cardProfile;
     CardView cardCourses;
     CardView cardVideos;
-    CardView cardArticles;
+    CardView cardQuizzes;
     CardView cardSettings;
 
 
@@ -25,17 +25,18 @@ public class Homescreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
 
-        cardHome = findViewById(R.id.cardHome);
+        cardGlossary = findViewById(R.id.cardGlossary);
         cardProfile = findViewById(R.id.cardProfile);
         cardCourses = findViewById(R.id.cardCourses);
         cardVideos = findViewById(R.id.cardVideos);
-        cardArticles = findViewById(R.id.cardArticles);
+        cardQuizzes = findViewById(R.id.cardQuizzes);
         cardSettings = findViewById(R.id.cardSettings);
 
 
-        cardHome.setOnClickListener(new View.OnClickListener() {
+        cardGlossary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(Homescreen.this, Glossary.class));
 
             }
         });
@@ -47,6 +48,32 @@ public class Homescreen extends AppCompatActivity {
 
             }
         });
+
+        cardCourses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Homescreen.this, CoursesActivity.class));
+
+            }
+        });
+
+        cardQuizzes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Homescreen.this, Quizzes.class));
+
+            }
+        });
+
+        cardVideos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Homescreen.this, Videos.class));
+
+            }
+        });
+
+
 
 
     }

@@ -75,6 +75,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         String fullName= editTextFullName.getText().toString().trim();
         String age= editTextAge.getText().toString().trim();
         String confirmPassword= editTextConfirmPassword.getText().toString().trim();
+        String profilePicture = "";
 
         if(fullName.isEmpty()){
             editTextFullName.setError("You must enter your name!");
@@ -129,17 +130,18 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
 
                         if (task.isSuccessful()){
-                            User user = new User(fullName, age, email);
+                            //User user = new User(fullName, email, age);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    .setValue(new User(fullName, email, age, profilePicture)).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if(task.isSuccessful()){
                                                 Toast.makeText(RegisterUser.this, "User has been registered successfully!", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);
                                                 // Then user should be redirected
+                                                startActivity(new Intent(RegisterUser.this, dashboard.class));
                                             } else {
                                                 Toast.makeText(RegisterUser.this, "Failed to register user! Please try again.", Toast.LENGTH_LONG).show();
                                                 progressBar.setVisibility(View.GONE);

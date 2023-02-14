@@ -1,11 +1,21 @@
 buildscript {
     dependencies {
         classpath 'com.google.gms:google-services:4.3.14'
-        //Old Version was 4.3.10
+        //Old Version was 4.3.10 I Had to change it bc of some issues with compatibility
+        
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     id 'com.android.application' version '7.3.0' apply false
     id 'com.android.library' version '7.3.0' apply false
     //Old Version was 7.3.1
+}
+
+allprojects {
+    repositories {
+
+
+
+    }
+
 }

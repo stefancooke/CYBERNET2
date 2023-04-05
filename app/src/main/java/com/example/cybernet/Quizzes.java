@@ -42,7 +42,7 @@ public class Quizzes extends AppCompatActivity {
         cardQuiz2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quizzes.this, ProfileActivity.class));
+                startActivity(new Intent(Quizzes.this, Quiz2.class));
 
             }
         });
@@ -50,7 +50,7 @@ public class Quizzes extends AppCompatActivity {
         cardQuiz3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Quizzes.this, CoursesActivity.class));
+                startActivity(new Intent(Quizzes.this, Quiz3.class));
 
             }
         });

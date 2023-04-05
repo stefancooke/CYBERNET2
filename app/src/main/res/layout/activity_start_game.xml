@@ -8,7 +8,7 @@
     android:background="#e8f4f8"
     android:gravity="center"
     android:padding="16dp">
-    <!-- Create a horizontal LinearLayout to display timer and points related stuff -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvTimer"
                 android:layout_marginLeft="5dp"
-                android:text="10s"
+                android:text="30s"
                 android:textSize="24sp" />
         </LinearLayout>
         <LinearLayout
@@ -49,42 +49,41 @@
                 android:textSize="24sp" />
         </LinearLayout>
     </LinearLayout>
-    <!-- Create a vertical LinearLayout to hold the main content -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
-        <!-- Create a TextView to show the Question. -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:gravity="center"
-            android:text="Can you spot the what is wrong in this picture?"
+            android:text="Can you spot what is wrong in this picture?"
             android:textSize="24sp" />
-        <!-- Create a vertical LinearLayout to show the image for Technology
-        that is in question, four buttons to display four options, a TextView
-        for showing the result of any user selection, right or wrong and a Button
-        to proceed to the next question.
-        -->
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
+
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:id="@+id/ivShowImage"
                 android:layout_margin="5dp"
-                tools:srcCompat="@drawable/img" />
+                tools:srcCompat="@drawable/fakefacebook" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/button1"
                 android:onClick="answerSelected"
-                android:textSize="32sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/white"
                 android:background="#2196f3"
                 app:backgroundTint="@null"
@@ -94,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button2"
                 android:onClick="answerSelected"
-                android:textSize="32sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/white"
                 android:background="#2196f3"
                 app:backgroundTint="@null"
@@ -104,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button3"
                 android:onClick="answerSelected"
-                android:textSize="32sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/white"
                 android:background="#2196f3"
                 app:backgroundTint="@null"
@@ -114,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button4"
                 android:onClick="answerSelected"
-                android:textSize="32sp"
+                android:textSize="16sp"
                 android:textColor="@android:color/white"
                 android:background="#2196f3"
                 app:backgroundTint="@null"

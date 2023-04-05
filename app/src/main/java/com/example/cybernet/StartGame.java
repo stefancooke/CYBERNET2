@@ -41,14 +41,28 @@ public class StartGame extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
         tvPoints = findViewById(R.id.tvPoints);
         index = 0;
-        techList.add("Android");
-        techList.add("C");
-        techList.add("Bootstrap");
-        techList.add("Code Igniter");
-        map.put(techList.get(0), R.drawable.img);
-        map.put(techList.get(1), R.drawable.c);
-        map.put(techList.get(2), R.drawable.bootstrap);
-        map.put(techList.get(3), R.drawable.codeigniter);
+        techList.add("The email address looks fraudulent");
+        techList.add("The link could be spoofed");
+        techList.add("The URL looks suspicious");
+        techList.add("Generic email not addressed to anyone");
+        techList.add("Poor grammar throughout email");
+        techList.add("An attempt at spear phishing");
+        techList.add("There is a sense of urgency and a threat");
+
+
+
+
+
+        map.put(techList.get(0), R.drawable.dropboxphish);
+        map.put(techList.get(1), R.drawable.amazonphish);
+        map.put(techList.get(2), R.drawable.fakefacebook);
+        map.put(techList.get(3), R.drawable.netflixphish);
+        map.put(techList.get(4), R.drawable.suntrustphish);
+        map.put(techList.get(5), R.drawable.ceophish);
+        map.put(techList.get(6), R.drawable.urgentphish);
+
+
+
         Collections.shuffle(techList);
         millisUntilFinished = 10000;
         points = 0;
@@ -60,7 +74,7 @@ public class StartGame extends AppCompatActivity {
     }
 
     private void startGame() {
-        millisUntilFinished = 10000;
+        millisUntilFinished = 30000;
         tvTimer.setText(""+ (millisUntilFinished / 1000) + "s");
         tvPoints.setText(points + " / " + techList.size());
         generateQuestions(index);

@@ -88,6 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
         final TextView fullNameTextView = (TextView) findViewById(R.id.fullName);
         final TextView emailTextView = (TextView) findViewById(R.id.email);
         final TextView ageTextView = (TextView) findViewById(R.id.age);
+        final ImageView picImageView = (ImageView) findViewById(R.id.profilePic);
 
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -102,9 +103,12 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 
+
                     fullNameTextView.setText(fullName);
                     emailTextView.setText(email);
                     ageTextView.setText(age);
+
+
 
                 }
             }

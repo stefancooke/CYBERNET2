@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Quiz1"
-    android:background="@drawable/cut_card_background"
+    android:background="@drawable/background"
     android:gravity="center"
     android:orientation="vertical"
     >
@@ -16,9 +16,10 @@
         android:gravity="center"
         android:text="Spot the Phish Quiz"
         android:textSize="50sp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold|italic"
         android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="400dp"
         />
     <ImageButton
         android:layout_width="wrap_content"
@@ -31,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Play"
         android:textSize="40sp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold|italic"
         android:fontFamily="sans-serif-condensed"
         android:onClick="startGame"/>

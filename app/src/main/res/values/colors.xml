@@ -11,6 +11,10 @@
     <color name="blue">#00BFFF</color>
     <color name = "dark_blue">#095CDA</color>
     <color name ="orange">#FF9800</color>
+    <color name="background_color">#f8f8f8</color>
+    <color name="silver">#615E5E</color>
+
+
 
 
 </resources>

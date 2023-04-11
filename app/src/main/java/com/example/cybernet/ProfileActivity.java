@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
@@ -88,7 +90,32 @@ public class ProfileActivity extends AppCompatActivity {
         final TextView fullNameTextView = (TextView) findViewById(R.id.fullName);
         final TextView emailTextView = (TextView) findViewById(R.id.email);
         final TextView ageTextView = (TextView) findViewById(R.id.age);
-        final ImageView picImageView = (ImageView) findViewById(R.id.profilePic);
+
+        // Get a reference to the Firebase Storage instance
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+
+        // Get the download URL of the profile picture from the Firebase Realtime Database
+        FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("profilePicture")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String profilePictureUrl = snapshot.getValue(String.class);
+
+                        // Load the image into an ImageView using Glide
+                        Glide.with(ProfileActivity.this)
+                                .load(profilePictureUrl)
+                                .into(profilePicture);
+                        // This removes and hides the text after the picture is placed
+                        TextView clickHereView = findViewById(R.id.clickheretext);
+                        clickHereView.setVisibility(View.GONE);
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        // Handle error
+                    }
+                });
 
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {

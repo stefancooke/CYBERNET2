@@ -11,10 +11,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp"
         android:fontFamily="sans-serif-condensed"
         android:text="Home"
         android:textColor="@color/black"
@@ -234,7 +233,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardSettings"
+            android:id="@+id/cardFAQs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="fill"
@@ -255,12 +254,12 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_settings"
+                    android:src="@drawable/ic_baseline_question_mark_24"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Settings"
+                    android:text="FAQs"
                     android:textSize="16sp"
                     android:textColor="@color/black"
                     android:textStyle="bold" />

@@ -104,11 +104,26 @@
         app:layout_constraintTop_toBottomOf="@+id/password"
         android:layout_marginTop="30dp"
     />
+    <CheckBox
+        android:id="@+id/terms"
+        android:layout_width="380dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/blue"
+        android:text="Terms and Conditions"
+        android:textColor="#9E9494"
+        android:textSize="24sp"
+        android:textStyle=""
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
+        />
+
     <Button
         android:id="@+id/registerUser"
         android:layout_width="380dp"
         android:layout_height="70dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@color/blue"
         android:text="Register User"
         android:textColor="#ffffff"
@@ -116,22 +131,7 @@
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPassword"
-        />
-
-    <Button
-        android:id="@+id/login"
-        android:layout_width="380dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/blue"
-        android:text="LOGIN"
-        android:textColor="#ffffff"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerUser"
+        app:layout_constraintTop_toBottomOf="@+id/terms"
         />
 
 

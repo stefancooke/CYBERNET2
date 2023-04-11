@@ -59,19 +59,6 @@ public class ExpandList {
                 "Antivirus software was originally developed to detect and remove computer viruses, hence the name. However, with the proliferation of other malware, antivirus software started to protect against other computer threats. Some products also include protection from malicious URLs, spam, and phishing.");
 
 
-        List<String > Topic14=new ArrayList<String>();
-        Topic14.add("");
-
-        List<String > Topic15=new ArrayList<String>();
-        Topic15.add("");
-
-        List<String > Topic16=new ArrayList<String>();
-        Topic16.add("");
-
-
-        List<String > Topic17=new ArrayList<String>();
-        Topic17.add("");
-
 
 
 
@@ -92,10 +79,7 @@ public class ExpandList {
         expandListDetail.put("URLs", Topic11);
         expandListDetail.put("Firewalls", Topic12);
         expandListDetail.put("Anti-Virus Software", Topic13);
-        expandListDetail.put("Spoofing", Topic14);
-        expandListDetail.put("Spoofing", Topic15);
-        expandListDetail.put("Spoofing", Topic16);
-        expandListDetail.put("Spoofing", Topic17);
+
 
 
 

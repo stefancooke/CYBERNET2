@@ -3,11 +3,15 @@ package com.example.cybernet;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -15,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,8 +29,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private TextView banner, registerUser, login;
     private EditText editTextFullName, editTextAge, editTextEmail, editTextPassword, editTextConfirmPassword;
     private ProgressBar progressBar;
-
     private FirebaseAuth mAuth;
+    private CheckBox checkBox;
+    private MaterialAlertDialogBuilder materialAlertDialogBuilder;
 
 
     @Override
@@ -42,8 +48,55 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         registerUser = (Button) findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
-        login = (Button) findViewById(R.id.login);
-        login.setOnClickListener(this);
+
+        materialAlertDialogBuilder = new MaterialAlertDialogBuilder(this);
+
+        registerUser.setBackgroundColor(0xFFCCCCCC);
+
+        registerUser.setEnabled(false);
+
+        //This checks whether or not the box is checked
+        checkBox = findViewById(R.id.terms);
+
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    materialAlertDialogBuilder.setTitle("Terms and Conditions");
+                    materialAlertDialogBuilder.setMessage("Welcome to CyberNet! Before you can use our app, please read and accept our Terms and Conditions. By creating an account with us and using our app, you agree to comply with our Terms and Conditions and our Privacy Policy.\n" +
+                            "At CyberNet, we take your privacy and data security very seriously. When you create an account with us, we will ask you to provide certain information, including your login credentials. We will only use this information for the sole purpose of allowing you to access our app and providing our services. We will not share this information with any third parties, except as required by law. We take appropriate technical and organizational measures to ensure that your login information is stored securely and protected against unauthorized access or disclosure.\n" +
+                            "By using our app, you acknowledge that you have read and understood our Terms and Conditions and our Privacy Policy. If you have any questions or concerns about how we use your data, please do not hesitate to contact us. If you do not agree with our Terms and Conditions or our Privacy Policy, please do not use our app.\n");
+                    materialAlertDialogBuilder.setPositiveButton("Accept", new DialogInterface.OnClickListener() {
+                        @SuppressLint("ResourceAsColor")
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            registerUser.setBackgroundColor(R.color.blue);
+                            registerUser.setEnabled(true);
+                            dialogInterface.dismiss();
+                        }
+                    });
+                    materialAlertDialogBuilder.setNegativeButton("Decline", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            registerUser.setBackgroundColor(0xFFCCCCCC);
+                            dialogInterface.dismiss();
+                            checkBox.setChecked(false);
+                        }
+                    });
+
+                    materialAlertDialogBuilder.show();
+                } else {
+                    registerUser.setEnabled(false);
+                }
+            }
+        });
+
+        //Old Redirect button no longer needed
+
+        //login = (Button) findViewById(R.id.login);
+        //login.setOnClickListener(this);
+
+
 
         editTextFullName = (EditText) findViewById(R.id.fullName);
         editTextAge = (EditText) findViewById(R.id.age);
@@ -68,6 +121,15 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+
+    //Method created to ensure user enters a special character in their passowrd
+    private boolean validatePassword(String password) {
+        String specialChars = "[!@#$%&*()_+=|<>?{}\\[\\]~-]";
+        boolean hasSpecialChar = password.matches(".*" + specialChars + ".*");
+        return hasSpecialChar;
+    }
+
 
     private void registerUser() {
         String email= editTextEmail.getText().toString().trim();
@@ -104,6 +166,12 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             editTextPassword.requestFocus();
             return;
         }
+
+        if (!validatePassword(password)) {
+            editTextPassword.setError("Password must include a special character.");
+            return;
+        }
+
         if(password.length() < 6){
             editTextPassword.setError("The minimum length for a password should be 6 characters!");
             editTextPassword.requestFocus();
@@ -117,6 +185,11 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             editTextConfirmPassword.requestFocus();
             return;
         }
+
+
+
+
+
 
 
 

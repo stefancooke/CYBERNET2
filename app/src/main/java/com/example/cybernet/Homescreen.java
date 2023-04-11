@@ -17,7 +17,7 @@ public class Homescreen extends AppCompatActivity {
     CardView cardCourses;
     CardView cardVideos;
     CardView cardQuizzes;
-    CardView cardSettings;
+    CardView cardFAQs;
 
 
     @Override
@@ -30,7 +30,7 @@ public class Homescreen extends AppCompatActivity {
         cardCourses = findViewById(R.id.cardCourses);
         cardVideos = findViewById(R.id.cardVideos);
         cardQuizzes = findViewById(R.id.cardQuizzes);
-        cardSettings = findViewById(R.id.cardSettings);
+        cardFAQs = findViewById(R.id.cardFAQs);
 
 
         cardGlossary.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +70,13 @@ public class Homescreen extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(Homescreen.this, Videos.class));
 
+            }
+        });
+
+        cardFAQs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Homescreen.this, FAQs.class));
             }
         });
 

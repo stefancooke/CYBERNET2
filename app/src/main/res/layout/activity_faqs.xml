@@ -140,6 +140,27 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/light_gray" />
+
+            <TextView
+                android:text="Q: My profile picture hasnt been saved?"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:text="To save your profile picture press the upload image button once you have selected an image."
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/light_gray" />
         </LinearLayout>
 
         <!-- Technical Questions -->
@@ -216,7 +237,7 @@
             android:layout_marginTop="8dp" />
 
             <TextView
-                android:text="At CyberNet, we understand the importance of keeping your data safe and secure. To create an account with us, we will ask you to provide your username and password. This information is needed for you to log in and access our services. We want to assure you that we will only use this information for the sole purpose of allowing you to access our app and services. We won't share your login details with any third parties, unless required by law. We take the necessary technical and organizational measures to ensure that your login information is kept safe and secure from unauthorized access or disclosure. If you need to modify or delete your login information, you can do so at any time. If you have any concerns or questions about how we handle your data, please don't hesitate to contact us."
+                android:text="At CyberNet, we understand the importance of keeping your data safe and secure. To create an account with us, we will ask you to provide your username and password. This information is needed for you to log in and access our services and is handled through Google's Firebase Authentication process. We want to assure you that we will only use this information for the sole purpose of allowing you to access our app and services. We won't share your login details with any third parties, unless required by law. We take the necessary technical and organizational measures to ensure that your login information is kept safe and secure from unauthorized access or disclosure. If you need to modify or delete your login information, you can do so at any time. If you have any concerns or questions about how we handle your data, please don't hesitate to contact us."
                 android:textSize="14sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

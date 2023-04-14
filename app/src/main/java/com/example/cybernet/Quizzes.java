@@ -27,8 +27,6 @@ public class Quizzes extends AppCompatActivity {
         cardQuiz2 = findViewById(R.id.cardQuiz2);
         cardQuiz3 = findViewById(R.id.cardQuiz3);
         cardQuiz4 = findViewById(R.id.cardQuiz4);
-        cardQuiz5 = findViewById(R.id.cardQuiz5);
-        cardQuiz6 = findViewById(R.id.cardQuiz6);
 
 
         cardQuiz1.setOnClickListener(new View.OnClickListener() {
@@ -63,21 +61,6 @@ public class Quizzes extends AppCompatActivity {
             }
         });
 
-        cardQuiz5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quizzes.this, Quiz5.class));
-
-            }
-        });
-
-        cardQuiz6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Quizzes.this, Quiz6.class));
-
-            }
-        });
 
 
 

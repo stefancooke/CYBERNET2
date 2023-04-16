@@ -30,10 +30,12 @@ public class Quiz4 extends AppCompatActivity {
     //Phishing Prevention Questions
     public static Question[] questions = {
             new Question("What is email filtering?", "A method of sorting emails by sender", "A way to automatically delete spam emails", "A technique used to block emails that may contain phishing links or malware", "A technique used to block emails that may contain phishing links or malware"),
-            new Question("What is 2FA?", "A way to secure an online account using two passwords", "A method of logging in using a username and a fingerprint", "A process that requires two different forms of authentication to access an account", "A process that requires two different forms of authentication to access an account"),
+            new Question("What is two factor authentication (2FA)?", "A way to secure an online account using two passwords", "A method of logging in using a username and a fingerprint", "A process that requires two different forms of authentication to access an account", "A process that requires two different forms of authentication to access an account"),
             new Question("What is web filtering?", "A tool used to block websites that may contain phishing links or malware", "A method of tracking internet usage on a specific device", "A way to optimize internet speed and connectivity", "A tool used to block websites that may contain phishing links or malware"),
             new Question("Why is it important to regularly update software and applications?", "To ensure that the latest security patches are installed", "To keep up with the latest trends in software design", "To improve the user experience and functionality of the software", "To ensure that the latest security patches are installed"),
             new Question("What is the purpose of phishing awareness training?", "To teach individuals how to identify and avoid phishing attacks", "To train individuals on how to create phishing emails", "To educate individuals on the importance of sharing personal information online.", "To teach individuals how to identify and avoid phishing attacks"),
+            new Question("What are some features of anti-phishing software?", "Spam filters, Malicious file detection and Malicious URL detection","Bandwidth amplifiers, Encryption of files and Session Cookies","Data packet sniffers and Intrusion prevention systems","Spam filters, Malicious file detection and Malicious URL detection")
+
     };
 
     private Question currentQuestion;

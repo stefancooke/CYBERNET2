@@ -1,5 +1,4 @@
 <h1>CyberNet Educational App</h1>
-<h2>Check out the blog post on my website for more detail</h2>
 
 ### [Video Demonstration](https://drive.google.com/file/d/1_I7oPa8E_pJIXzjCDn6wSi6DCmSBWQ5u/view?usp=drive_link)
 
